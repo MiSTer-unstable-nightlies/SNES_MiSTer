@@ -56,6 +56,7 @@ module main (
 	input             GSU_TURBO,
 	input             GSU_FASTROM,
 	input             SUFAMI_SWAP,
+	input       [7:0] CC_DIP,
 
 	input             BLEND,
 	input             PAL,
@@ -99,6 +100,8 @@ module main (
 
 	input             TURBO,
 	output            TURBO_ALLOW,
+	
+	input             DSP_FREQ,
 
 	output     [15:0] MSU_TRACK_NUM,
 	output            MSU_TRACK_REQUEST,
@@ -267,6 +270,8 @@ SNES SNES
 	.DBG_CPU_EN(DBG_CPU_EN),
 	
 	.turbo(TURBO),
+	
+	.dsp_freq(DSP_FREQ),
 
 	.audio_l(AUDIO_L),
 	.audio_r(AUDIO_R)
@@ -379,6 +384,8 @@ DSP_LHRomMap #(.USE_DSPn(USE_DSPn)) DSP_LHRomMap
 	.bsram_mask(RAM_MASK),
 
 	.ext_rtc(EXT_RTC),
+	
+	.cc_dip(CC_DIP),
 
 	.ss_busy(SS_BUSY),
 	.ss_ram_a(SS_EXT_ADDR[11:0]),
